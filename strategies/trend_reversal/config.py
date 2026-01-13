@@ -29,7 +29,7 @@ STOP_LOSS_PCT = 2.0          # Stop loss at 2% loss
 MAX_HOLD_CANDLES = 6         # Max days to hold before exiting
 
 # Risk management
-TRADE_QUANTITY = 0.001       # Amount of BTC per trade
+TRADE_QUANTITY = 0.01       # Amount of BTC per trade
 MAX_DAILY_TRADES = 10        # Maximum trades per day
 CHECK_INTERVAL = 60          # Check every 60 seconds
 
