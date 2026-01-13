@@ -4,10 +4,14 @@ Simulates trading from a historical start date to see how the strategy would hav
 No API keys required - uses public market data.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
 import pandas as pd
 from datetime import datetime, timedelta
 from pybit.unified_trading import HTTP
-from config import (
+from strategies.sma_crossover.config import (
     SYMBOL,
     CATEGORY,
     SHORT_SMA_PERIOD,

@@ -3,10 +3,15 @@ Bybit Trading Bot - SMA Crossover Strategy
 Paper trading bot using Bybit testnet.
 """
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
 import time
 import pandas as pd
 from pybit.unified_trading import HTTP
-from config import (
+
+from strategies.sma_crossover.config import (
     API_KEY,
     API_SECRET,
     USE_TESTNET,
@@ -18,7 +23,7 @@ from config import (
     TRADE_QUANTITY,
     CHECK_INTERVAL,
 )
-from logger import setup_logger, log_trade, log_signal
+from logger import setup_logger, log_trade, log_signal  # shared logger from root
 
 
 class TradingBot:
