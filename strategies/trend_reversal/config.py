@@ -13,20 +13,20 @@ SYMBOL = "BTCUSDT"
 CATEGORY = "spot"
 
 # Trend detection settings
-TREND_SMA_PERIOD = 50        # SMA period to determine trend direction
-TREND_LOOKBACK = 5           # Number of candles to confirm trend (SMA rising)
+TREND_SMA_PERIOD = 20        # SMA period to determine trend direction
+TREND_LOOKBACK = 3           # Number of candles to confirm trend (SMA rising)
 
-# Intraday settings
-TIMEFRAME = "15"             # 15-minute candles for intraday trading
+# Daily candle settings
+TIMEFRAME = "D"              # Daily candles
 
 # Entry conditions
-MIN_RED_CANDLE_PCT = 0.1     # Minimum red candle size (% drop) to trigger entry
-MAX_RED_CANDLE_PCT = 2.0     # Maximum red candle size (avoid catching falling knives)
+MIN_RED_CANDLE_PCT = 0.5     # Minimum red candle size (% drop) to trigger entry
+MAX_RED_CANDLE_PCT = 5.0     # Maximum red candle size (avoid catching falling knives)
 
 # Exit settings
-TAKE_PROFIT_PCT = 0.5        # Take profit at 0.5% gain
-STOP_LOSS_PCT = 1.0          # Stop loss at 1% loss
-MAX_HOLD_CANDLES = 4         # Max candles to hold before exiting (1 hour on 15m)
+TAKE_PROFIT_PCT = 2.0        # Take profit at 2% gain
+STOP_LOSS_PCT = 3.0          # Stop loss at 3% loss
+MAX_HOLD_CANDLES = 3         # Max days to hold before exiting
 
 # Risk management
 TRADE_QUANTITY = 0.001       # Amount of BTC per trade

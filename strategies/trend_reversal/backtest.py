@@ -62,7 +62,8 @@ class TrendReversalBacktester:
         print()
         print(f"Period: {self.start_date.date()} to {self.end_date.date()}")
         print(f"Symbol: {SYMBOL}")
-        print(f"Timeframe: {TIMEFRAME}m candles")
+        timeframe_display = "Daily" if TIMEFRAME == "D" else f"{TIMEFRAME}m"
+        print(f"Timeframe: {timeframe_display} candles")
         print()
         print("Strategy Rules:")
         print(f"  - Trend: Price above {TREND_SMA_PERIOD} SMA, SMA rising for {TREND_LOOKBACK} candles")
@@ -85,7 +86,10 @@ class TrendReversalBacktester:
 
         # Extra data for SMA warmup
         warmup_periods = TREND_SMA_PERIOD + TREND_LOOKBACK + 10
-        interval_ms = int(TIMEFRAME) * 60 * 1000
+        if TIMEFRAME == "D":
+            interval_ms = 24 * 60 * 60 * 1000  # 1 day in ms
+        else:
+            interval_ms = int(TIMEFRAME) * 60 * 1000
         warmup_start_ts = start_ts - (warmup_periods * interval_ms)
 
         current_ts = warmup_start_ts
@@ -358,7 +362,8 @@ class TrendReversalBacktester:
             exit_reasons[reason]["profit"] += t.get("profit", 0)
 
         print(f"Period: {self.start_date.date()} to {self.end_date.date()}")
-        print(f"Symbol: {SYMBOL} ({TIMEFRAME}m candles)")
+        timeframe_display = "Daily" if TIMEFRAME == "D" else f"{TIMEFRAME}m"
+        print(f"Symbol: {SYMBOL} ({timeframe_display} candles)")
         print()
         print(f"Initial Balance:  ${self.initial_balance:,.2f}")
         print(f"Final Balance:    ${final_value:,.2f}")
