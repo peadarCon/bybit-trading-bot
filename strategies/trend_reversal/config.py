@@ -24,9 +24,9 @@ MIN_RED_CANDLE_PCT = 0.5     # Minimum red candle size (% drop) to trigger entry
 MAX_RED_CANDLE_PCT = 5.0     # Maximum red candle size (avoid catching falling knives)
 
 # Exit settings
-TAKE_PROFIT_PCT = 2.0        # Take profit at 2% gain
-STOP_LOSS_PCT = 3.0          # Stop loss at 3% loss
-MAX_HOLD_CANDLES = 3         # Max days to hold before exiting
+TAKE_PROFIT_PCT = 4.0        # Take profit at 4% gain
+STOP_LOSS_PCT = 2.0          # Stop loss at 2% loss
+MAX_HOLD_CANDLES = 6         # Max days to hold before exiting
 
 # Risk management
 TRADE_QUANTITY = 0.001       # Amount of BTC per trade
